@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ welcome() }}</p>
+    </div>
+</body>
+<script>
+    const App = {
+        data(){
+            return{
+                greeting: 'Hello People today is:' + new Date().toLocaleString(),
+                isItTrue: true,
+                array: ['Rabiul', 'Hasan'],
+                obj: {
+                    car: 'Ferrari'
+                },
+                func:()=>{
+                return 'Message From Function'
+                }
+            }
+            
+        },
+        methods:{
+            welcome(){
+                const randomname = this.array[Math.floor(Math.random() * this.array.length)]
+                if (this.isItTrue) {
+                    return `${this.greeting} my name is ${randomname}`
+                }
+                return this.obj.car
+            }
+        }
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+</html>
