@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="src" v-bind:alt="alt">
+    <hr/>
+        <a v-bind:href="link">Go Google</a>
+    <hr/>
+        <p v-text="myText"></p>
+    <hr/>
+        <p v-html="myHtml"></p>
+    </div>
+</body>
+<script>
+    const App = {
+        data(){
+            return{
+                src: 'https://picsum.photos/200/300',
+                alt: 'My Photo',
+                link: 'https://google.com',
+                myText: 'Hello World',
+                myHtml: '<h1>Helloooooooo</h1>'
+            }
+            
+        },
+        methods:{}
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+</html>
